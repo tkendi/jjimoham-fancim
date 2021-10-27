@@ -1,4 +1,18 @@
-/** @type {import('next').NextConfig} */
+// /** @type {import('next').NextConfig} */
+// module.exports = {
+//   reactStrictMode: true,
+// }
+
+const debug = process.env.NODE_ENV !== "production";
+const name = "small-magic-project-deployment";
+
 module.exports = {
-  reactStrictMode: true,
-}
+  assetPrefix: !debug ? `/${name}/` : "",
+};
+
+// module.exports = {
+//   images: {
+//     loader: (width, src, quality) =>
+//       `/preprocessed-images/${filename}-${width}.jpg`,
+//   },
+// };
