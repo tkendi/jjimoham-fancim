@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 
 //config
 import { prefix } from "config/config";
@@ -65,9 +65,9 @@ const Home: NextPage = () => {
         >
           Powered by{" "}
           <span className={styles.logo}>
-            <Image
+            <img
               src={`${prefix}/vercel.svg`}
-              alt="Vercel Logo"
+              alt="Vercel"
               width={72}
               height={16}
             />

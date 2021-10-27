@@ -8,3 +8,7 @@
 // export const PortfolioConsumer = PortfolioContext.Consumer;
 
 // export default PortfolioContext;
+
+export const context = () => {
+  return "context API preparing";
+};
