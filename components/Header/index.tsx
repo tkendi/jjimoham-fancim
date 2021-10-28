@@ -12,15 +12,15 @@ const Header = () => {
     <Nav>
       <CustomContainer>
         <Wrap>
-          <Title onClick={() => router.push("/")}>COVID</Title>
-          <MenuWrap>
+          <Title onClick={() => router.push("/")}>Tkendi</Title>
+          {/* <MenuWrap>
             <Menu onClick={() => router.push("/korea")}>
               <LinkTitle>Korea</LinkTitle>
             </Menu>
             <Menu onClick={() => router.push("/world")}>
               <LinkTitle>World</LinkTitle>
             </Menu>
-          </MenuWrap>
+          </MenuWrap> */}
         </Wrap>
       </CustomContainer>
     </Nav>
@@ -30,7 +30,7 @@ const Header = () => {
 export default Header;
 
 const Nav = styled.nav`
-  height: 80px;
+  height: max-content;
   background-color: #fdfdfd;
 `;
 
