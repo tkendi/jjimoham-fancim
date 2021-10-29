@@ -13,14 +13,14 @@ const Header = () => {
       <CustomContainer>
         <Wrap>
           <Title onClick={() => router.push("/")}>Tkendi</Title>
-          {/* <MenuWrap>
+          <MenuWrap>
             <Menu onClick={() => router.push("/korea")}>
-              <LinkTitle>Korea</LinkTitle>
+              <LinkTitle>Next</LinkTitle>
             </Menu>
             <Menu onClick={() => router.push("/world")}>
-              <LinkTitle>World</LinkTitle>
+              <LinkTitle>Nest</LinkTitle>
             </Menu>
-          </MenuWrap> */}
+          </MenuWrap>
         </Wrap>
       </CustomContainer>
     </Nav>
