@@ -1,14 +1,16 @@
-import Header from "components/Header";
-import MainContainer from "containers/Main";
 import type { NextPage } from "next";
-// import Image from "next/image";
+
+//container
+import MainContainer from "containers/Main";
+
+//components
+import Layout from "components/Layout";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <MainContainer />
-    </>
+    </Layout>
   );
 };
 
