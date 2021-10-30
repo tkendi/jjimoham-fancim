@@ -55,6 +55,13 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
 
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&display=swap"
+            rel="stylesheet"
+          />
+
           {/* <!-- Boxicons CDN Link --> */}
           <link
             href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"

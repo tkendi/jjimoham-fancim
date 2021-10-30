@@ -14,10 +14,10 @@ const Header = () => {
         <Wrap>
           <Title onClick={() => router.push("/")}>Tkendi</Title>
           <MenuWrap>
-            <Menu onClick={() => router.push("/korea")}>
+            <Menu onClick={() => router.push("/#")}>
               <LinkTitle>Next</LinkTitle>
             </Menu>
-            <Menu onClick={() => router.push("/world")}>
+            <Menu onClick={() => router.push("/#")}>
               <LinkTitle>Nest</LinkTitle>
             </Menu>
           </MenuWrap>
@@ -31,7 +31,7 @@ export default Header;
 
 const Nav = styled.nav`
   height: max-content;
-  background-color: #fdfdfd;
+  background-color: #1a1a1a;
 `;
 
 const Wrap = styled.div`
@@ -53,13 +53,14 @@ const Title = styled.h1`
   white-space: pre;
   user-select: none;
   cursor: pointer;
+  color: #fff
 `;
 
 const MenuWrap = styled.div`
   width: calc(100% - 120px);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-left: 50px;
 `;
 
@@ -68,6 +69,7 @@ const Menu = styled.div`
   outline: none;
   margin: 0px 15px;
   position: relative;
+  color: #fff;
 `;
 
 const LinkTitle = styled.p`
