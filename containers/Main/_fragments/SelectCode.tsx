@@ -49,10 +49,14 @@ const TextWrap = styled.div`
 
     > p {
       font-weight: bold;
+      transition: all 130ms ease-in-out;
     }
 
     :hover {
-      transform: scale(1.2);
+      transform: scaleY(1.2);
+      > p {
+        color: #0f4c81;
+      }
     }
   }
 `;

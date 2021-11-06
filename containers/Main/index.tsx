@@ -10,7 +10,7 @@ const MainContainer = () => {
   return (
     <React.Fragment>
       <Container>
-        <BackImgWrap />
+        <BackImgWrap /> 
         <SelectCode />
       </Container>
     </React.Fragment>
