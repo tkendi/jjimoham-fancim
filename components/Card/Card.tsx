@@ -19,9 +19,23 @@ const Card = ({ text }: Props) => {
 export default Card;
 
 const Wrap = styled.div`
-  width: 600px;
-  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url("https://w.namu.la/s/3baa4bc810d295a48ce4b5f1714585a4772075e91edee6186af906cbc895d7d7864e1a3a6777009a8e29edff34fc3bb804fb6249a866d3de678bc9f30d1facdbea5d2ce6070df4d744fa738eef932989");
   background-size: cover;
   background-position: center;
+  border-radius: 25px;
+
+  transition: all 550ms linear;
+
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.05);
+  }
+
+  > p {
+    font-weight: bold;
+  }
 `;

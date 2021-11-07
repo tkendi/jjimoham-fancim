@@ -5,6 +5,7 @@ import React from "react";
 import { Container } from "components/Container";
 import BackImgWrap from "./_fragments/BackImgWrap";
 import SelectCode from "./_fragments/SelectCode";
+import CardSection from "./_fragments/CardSection";
 
 const MainContainer = () => {
   return (
@@ -12,6 +13,7 @@ const MainContainer = () => {
       <Container>
         <BackImgWrap /> 
         <SelectCode />
+        <CardSection />
       </Container>
     </React.Fragment>
   );
