@@ -22,7 +22,7 @@ const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://w.namu.la/s/3baa4bc810d295a48ce4b5f1714585a4772075e91edee6186af906cbc895d7d7864e1a3a6777009a8e29edff34fc3bb804fb6249a866d3de678bc9f30d1facdbea5d2ce6070df4d744fa738eef932989");
+  background: url("https://ww.namu.la/s/0cc69cc298da69d330b1a720314a35dfb703f5bc166b717ae56d9137cd595c7b7a16d0df94dc3e3bebf7a94162f226187120847147f72beb362db3b31f18da04053041751c2890cee34b8fc0739bd955");
   background-size: cover;
   background-position: center;
   border-radius: 25px;

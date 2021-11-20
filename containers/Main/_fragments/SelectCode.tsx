@@ -11,14 +11,18 @@ export const TextData = [
   { id: 3, text: "Nest.js" },
 ];
 
-const SelectCode = () => {
+interface Props {
+  selectCodeType: any;
+}
+
+const SelectCode = ({ selectCodeType }: Props) => {
   return (
     <Wrap>
       <Title>This page help your code</Title>
       <TextWrap>
         {TextData.map((cur) => {
           return (
-            <div key={cur.id}>
+            <div key={cur.id} onClick={() => selectCodeType(cur.text)}>
               <Text>{cur.text}</Text>
             </div>
           );

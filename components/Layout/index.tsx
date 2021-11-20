@@ -41,7 +41,8 @@ export default Layout;
 // }
 
 const Body = styled.div`
-  height: calc(100% + 204px);
+  /* height: calc(100% + 204px); */
+  height: 100%;
   background-color: #1a1a1a;
   padding: 50px 0px;
 `;
