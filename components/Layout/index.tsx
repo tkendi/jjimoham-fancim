@@ -33,13 +33,6 @@ const Layout = ({ children, noHeader, title = "tkendi" }: Props) => {
 
 export default Layout;
 
-// interface styleProps {
-//   height?: number;
-//   noHeader?: boolean;
-//   fixedNav?: boolean;
-//   centered?: boolean;
-// }
-
 const Body = styled.div`
   /* height: calc(100% + 204px); */
   height: 100%;

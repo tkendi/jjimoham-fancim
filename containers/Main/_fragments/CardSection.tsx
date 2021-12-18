@@ -30,12 +30,24 @@ const CardSection = ({ type }: Props) => {
       <Wrap>
         {type === "All" ? (
           <div>
+            {[...NextData, ...NestData]
+              .sort(() => Math.random() - 0.5)
+              .map((cur) => {
+                return <Card text={cur.title} />;
+              })}
+          </div>
+        ) : type === "Next.js" ? (
+          <div>
             {NextData.map((cur) => {
-              return <Card text="card testing" />;
+              return <Card text={cur.title} />;
             })}
           </div>
         ) : (
-          <Card text="card testing" />
+          <div>
+            {NestData.map((cur) => {
+              return <Card text={cur.title} />;
+            })}
+          </div>
         )}
       </Wrap>
     </Section>
@@ -55,10 +67,12 @@ const Wrap = styled.div`
 
   > div {
     width: 100%;
-    height: 200px;
     display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
     > div {
       width: calc(100% / 5);
+      height: 200px;
       margin: 5px 15px;
     }
 
@@ -69,17 +83,13 @@ const Wrap = styled.div`
 
   @media screen and (max-width: 780px) {
     > div {
-      /* justify-content: space-between; */
-      flex-flow: row wrap;
-      > div {
-        width: 100%;
-        height: 200px;
-        margin: 5px 15px;
-      }
+      width: 100%;
+      height: 200px;
+      margin: 5px 15px;
+    }
 
-      > p {
-        color: #fff;
-      }
+    > p {
+      color: #fff;
     }
   }
 `;

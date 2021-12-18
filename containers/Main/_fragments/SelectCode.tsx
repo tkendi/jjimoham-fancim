@@ -1,6 +1,5 @@
 import React from "react";
-
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 //components
 import { Title, Text } from "components/Typography";
@@ -13,18 +12,24 @@ export const TextData = [
 
 interface Props {
   selectCodeType: any;
+  codeType: string;
 }
 
-const SelectCode = ({ selectCodeType }: Props) => {
+const SelectCode = ({ selectCodeType, codeType }: Props) => {
+  console.log(codeType)
   return (
     <Wrap>
       <Title>This page help your code</Title>
       <TextWrap>
         {TextData.map((cur) => {
           return (
-            <div key={cur.id} onClick={() => selectCodeType(cur.text)}>
+            <TextContainer
+              key={cur.id}
+              isClick={cur.text === codeType}
+              onClick={() => selectCodeType(cur.text)}
+            >
               <Text>{cur.text}</Text>
-            </div>
+            </TextContainer>
           );
         })}
       </TextWrap>
@@ -45,22 +50,30 @@ const TextWrap = styled.div`
   justify-content: space-between;
   padding: 0px 25px;
   margin: 40px 0px;
+`;
 
-  > div {
-    padding: 0px 5px;
-    transition: all 580ms linear;
-    cursor: pointer;
+const TextContainer = styled.div<{ isClick: boolean }>`
+  padding: 0px 5px;
+  transition: all 580ms linear;
+  cursor: pointer;
 
+  > p {
+    font-weight: bold;
+    transition: all 130ms ease-in-out;
+  }
+
+  :hover {
+    transform: scaleY(1.2);
     > p {
-      font-weight: bold;
-      transition: all 130ms ease-in-out;
+      color: #0f4c81;
     }
+  }
 
-    :hover {
-      transform: scaleY(1.2);
+  ${(props) =>
+    props.isClick &&
+    css`
       > p {
         color: #0f4c81;
       }
-    }
-  }
+    `}
 `;
