@@ -16,7 +16,6 @@ interface Props {
 }
 
 const SelectCode = ({ selectCodeType, codeType }: Props) => {
-  console.log(codeType)
   return (
     <Wrap>
       <Title>This page help your code</Title>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 //components
@@ -16,7 +16,7 @@ const Card = ({ text }: Props) => {
   );
 };
 
-export default Card;
+export default memo(Card);
 
 const Wrap = styled.div`
   display: flex;

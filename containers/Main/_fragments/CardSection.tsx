@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled, { css, keyframes } from "styled-components";
 
 //components
 import Card from "components/Card/Card";
@@ -25,8 +25,16 @@ const NestData = [
 ];
 
 const CardSection = ({ type }: Props) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
+  }, [type]);
+
   return (
-    <Section>
+    <Section loading={!loading}>
       <Wrap>
         {type === "All" ? (
           <div>
@@ -56,10 +64,16 @@ const CardSection = ({ type }: Props) => {
 
 export default CardSection;
 
-const Section = styled.section`
+const Section = styled.section<{ loading: boolean }>`
   width: 100%;
   margin-top: 30px;
   padding: 0px 10px;
+
+  ${(props) =>
+    props.loading &&
+    css`
+    animation ${FadeIn} 100ms linear;
+  `}
 `;
 
 const Wrap = styled.div`
@@ -91,5 +105,14 @@ const Wrap = styled.div`
     > p {
       color: #fff;
     }
+  }
+`;
+
+const FadeIn = keyframes`
+  to {
+    opacity: 0
+  }
+  from {
+    opacity: 1
   }
 `;
