@@ -37,7 +37,7 @@ const TextWrap = styled.div`
 `;
 
 const CustomTitle = styled(Title)`
-  font-weight: 700;
+  font-weight: bold;
   font-size: 50px;
   white-space: pre;
 `;

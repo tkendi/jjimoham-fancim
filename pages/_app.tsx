@@ -1,8 +1,27 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+
+//components
+import { FadeInCompo } from "components/Fade/FadeIn";
+
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
+  }, []);
+
+  return loading ? (
+    <></>
+  ) : (
+    <FadeInCompo lazy={!loading}>
+      <Component {...pageProps} />
+    </FadeInCompo>
+  );
 }
 
-export default MyApp
+export default MyApp;

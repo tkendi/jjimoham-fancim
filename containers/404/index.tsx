@@ -6,7 +6,7 @@ import { Container } from "components/Container";
 const NotFoundContainer = () => {
   return (
     <Container>
-      <p>Page Not Found</p>
+      <p style={{color: "#fff"}}>Page Not Found</p>
     </Container>
   );
 };
