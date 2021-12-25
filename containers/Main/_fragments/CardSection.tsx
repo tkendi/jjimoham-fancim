@@ -82,7 +82,7 @@ const Wrap = styled.div`
   > div {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-flow: row wrap;
     > div {
       width: calc(100% / 5);
