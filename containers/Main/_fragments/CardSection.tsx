@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes, ThemeProvider } from "styled-components";
 
 //components
 import Card from "components/Card/Card";
@@ -33,7 +33,9 @@ const CardSection = ({ type }: Props) => {
     }, 100);
   }, [type]);
 
-  return (
+  return loading ? (
+    <></>
+  ) : (
     <Section loading={!loading}>
       <Wrap>
         {type === "All" ? (
@@ -82,7 +84,7 @@ const Wrap = styled.div`
   > div {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-flow: row wrap;
     > div {
       width: calc(100% / 5);
@@ -95,7 +97,7 @@ const Wrap = styled.div`
     }
   }
 
-  @media screen and (max-width: 780px) {
+  ${(props) => props.theme.window.mobile} {
     > div {
       width: 100%;
       height: 200px;

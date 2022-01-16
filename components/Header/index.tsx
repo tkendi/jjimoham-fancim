@@ -17,7 +17,7 @@ const Header = () => {
             <Menu onClick={() => router.push("/#")}>
               <LinkTitle>Next</LinkTitle>
             </Menu>
-            <Menu onClick={() => router.push("/#")}>
+            <Menu onClick={() => router.push("/nest")}>
               <LinkTitle>Nest</LinkTitle>
             </Menu>
           </MenuWrap>
@@ -30,7 +30,7 @@ const Header = () => {
 export default Header;
 
 const Nav = styled.nav`
-  height: max-content;
+  height: 80px;
   background-color: #1a1a1a;
 `;
 
@@ -53,7 +53,7 @@ const Title = styled.h1`
   white-space: pre;
   user-select: none;
   cursor: pointer;
-  color: #fff
+  color: #fff;
 `;
 
 const MenuWrap = styled.div`
