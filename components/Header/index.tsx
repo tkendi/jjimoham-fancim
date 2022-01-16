@@ -31,6 +31,8 @@ export default Header;
 
 const Nav = styled.nav`
   height: 80px;
+  position: sticky;
+  top: 0px;
   background-color: #1a1a1a;
 `;
 
