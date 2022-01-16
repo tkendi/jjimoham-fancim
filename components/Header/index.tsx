@@ -30,7 +30,7 @@ const Header = () => {
 export default Header;
 
 const Nav = styled.nav`
-  height: max-content;
+  height: 80px;
   background-color: #1a1a1a;
 `;
 

@@ -1,4 +1,7 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
+
+//styles
+import { FadeIn } from "styles/animation";
 
 export const FadeInCompo = styled.div<{ lazy: boolean }>`
   width: 100%;
@@ -9,13 +12,4 @@ export const FadeInCompo = styled.div<{ lazy: boolean }>`
     css`
       animation: ${FadeIn} 500ms linear;
     `}
-`;
-
-export const FadeIn = keyframes`
-  0% {
-    opacity: 0
-  }
-  100% {
-    opacity: 1
-  }
 `;

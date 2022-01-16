@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+//font-size mobile, tab, pc unify the size
+
 const TypoStyle = {
   padding: "0px",
   color: "#fff",
