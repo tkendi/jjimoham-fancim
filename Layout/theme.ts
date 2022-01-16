@@ -16,7 +16,7 @@ const gradientsColor = {
   },
 };
 
-export const light: DefaultTheme = {
+export const theme: DefaultTheme = {
   background: {
     PRIMARY: "#000",
     SECONDARY: "#FAFAFA",
@@ -24,10 +24,10 @@ export const light: DefaultTheme = {
   },
   MODAL_BACKGROUND: "#ffffff",
   color: {
-    PRIMARY: "#EC6A1A",
-    SECONDARY: "#FBB083",
-    PRIMARYSUB: "#FFDBC6",
-    SECONDARYSUB: "#FFEEE3",
+    PRIMARY: "#121212",
+    SECONDARY: "#332F2E",
+    PRIMARYSUB: "#332F2E",
+    SECONDARYSUB: "#4A3F3F",
     TERTIARY: "#FFFFFF",
     TERTIARYSUB: "#FFFFFF",
     POINT: "#F8BD4C",
@@ -40,8 +40,8 @@ export const light: DefaultTheme = {
     GRAY1: "#F7F7F7",
     GRAY0: "#FAFAFA",
     WHITE: "#FFFFFF",
-    WARNING: "#F14242",
-    WARNINGSUB: "#FFE2E2",
+    WARNING: "#DB4930",
+    WARNINGSUB: "#F22A29",
     SUCCESS: "#50A9EA",
     SUCCESSSUB: "#D4EBFC",
     ICON: "#EC6A1A",

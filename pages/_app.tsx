@@ -8,7 +8,7 @@ import { FadeInCompo } from "components/Fade/FadeIn";
 import "../styles/globals.css";
 
 //style layout
-import { light } from "Layout/theme";
+import { theme } from "Layout/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return loading ? (
     <></>
   ) : (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={theme}>
       <FadeInCompo lazy={!loading}>
         <Component {...pageProps} />
       </FadeInCompo>
