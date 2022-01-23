@@ -7,5 +7,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
-  padding: 15px;
+  padding: 0px 15px;
+
+  ${(props) => props.theme.window.mobile} {
+    max-width: unset;
+    width: 100%;
+  }
 `;

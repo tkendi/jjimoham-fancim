@@ -8,7 +8,7 @@ import { FadeInCompo } from "components/Fade/FadeIn";
 import "../styles/globals.css";
 
 //style layout
-import { theme } from "Layout/theme";
+import { theme } from "layout/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
