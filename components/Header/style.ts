@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav<{ bgColor: string }>`
+  width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
