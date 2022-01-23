@@ -6,15 +6,9 @@ import styled from "styled-components";
 import Header from "components/Header";
 
 interface Props {
-  pageName?: string;
   noHeader?: boolean;
-  fixedHeader?: boolean;
-  noBorder?: boolean;
-  centered?: boolean;
-  transparent?: boolean;
   children?: React.ReactNode;
   title?: string;
-  isSearchPage?: boolean;
 }
 
 const Layout = ({ children, noHeader, title = "tkendi" }: Props) => {
