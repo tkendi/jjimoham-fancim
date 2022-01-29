@@ -22,9 +22,11 @@ const NestContainer = () => {
   return lazy ? (
     <></>
   ) : (
+    // <LazyLoadCompo lazy={!lazy}>
     <React.Fragment>
       <Container></Container>
     </React.Fragment>
+    // </LazyLoadCompo>
   );
 };
 
