@@ -49,6 +49,10 @@ const TextWrap = styled.div`
   justify-content: space-between;
   padding: 0px 25px;
   margin: 40px 0px;
+
+  ${(props) => props.theme.window.mobile} {
+    margin: 0px 0px;
+  }
 `;
 
 const TextContainer = styled.div<{ isClick: boolean }>`
