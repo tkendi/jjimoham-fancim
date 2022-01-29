@@ -25,15 +25,13 @@ const MainContainer = () => {
   return lazy ? (
     <></>
   ) : (
-    // <LazyLoadCompo lazy={!lazy}>
-      <React.Fragment>
-        <Container>
-          <BackImgWrap />
-          <SelectCode codeType={type} selectCodeType={selectCodeType} />
-          <CardSection type={type} />
-        </Container>
-      </React.Fragment>
-    // </LazyLoadCompo>
+    <React.Fragment>
+      <Container>
+        <BackImgWrap />
+        <SelectCode codeType={type} selectCodeType={selectCodeType} />
+        <CardSection type={type} />
+      </Container>
+    </React.Fragment>
   );
 };
 

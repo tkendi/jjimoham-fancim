@@ -6,15 +6,9 @@ import styled from "styled-components";
 import Header from "components/Header";
 
 interface Props {
-  pageName?: string;
   noHeader?: boolean;
-  fixedHeader?: boolean;
-  noBorder?: boolean;
-  centered?: boolean;
-  transparent?: boolean;
   children?: React.ReactNode;
   title?: string;
-  isSearchPage?: boolean;
 }
 
 const Layout = ({ children, noHeader, title = "tkendi" }: Props) => {
@@ -34,7 +28,6 @@ const Layout = ({ children, noHeader, title = "tkendi" }: Props) => {
 export default Layout;
 
 const Body = styled.div`
-  /* height: calc(100% + 204px); */
   height: 100%;
   background-color: #1a1a1a;
   padding: 50px 0px;
