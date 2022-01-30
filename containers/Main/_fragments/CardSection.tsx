@@ -42,24 +42,24 @@ const CardSection = ({ type }: Props) => {
           <CardContainer>
             {[...NextData, ...NestData]
               .sort(() => Math.random() - 0.5)
-              .map((cur) => {
-                return <Card text={cur.title} />;
+              .map((cur, index: number) => {
+                return <Card key={index} text={cur.title} />;
               })}
           </CardContainer>
         )}
 
         {type === "Nest.js" && (
           <CardContainer>
-            {NestData.map((cur) => {
-              return <Card text={cur.title} />;
+            {NestData.map((cur, index: number) => {
+              return <Card key={index} text={cur.title} />;
             })}
           </CardContainer>
         )}
 
         {type === "Next.js" && (
           <CardContainer>
-            {NextData.map((cur) => {
-              return <Card text={cur.title} />;
+            {NextData.map((cur, index: number) => {
+              return <Card key={index} text={cur.title} />;
             })}
           </CardContainer>
         )}
