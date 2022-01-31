@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { css, keyframes, ThemeProvider } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 //components
 import Card from "components/Card/Card";
