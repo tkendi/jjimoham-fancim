@@ -29,6 +29,7 @@ export default Layout;
 
 const Body = styled.div`
   height: 100%;
+  min-height: calc(100vh - 80px);
   background-color: #1a1a1a;
   padding: 50px 0px;
 `;
