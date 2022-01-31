@@ -12,7 +12,7 @@ const MainContainer = () => {
 
   const [lazy, setLazy] = useState(true);
 
-  const selectCodeType = (type: string) => {
+  const selectCodeType = (type: "All" | "Nest.js" | "Next.js") => {
     setType(type);
   };
 

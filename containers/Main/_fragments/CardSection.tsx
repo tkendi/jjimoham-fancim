@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { css, keyframes, ThemeProvider } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 //components
 import Card from "components/Card/Card";
@@ -38,26 +38,30 @@ const CardSection = ({ type }: Props) => {
   ) : (
     <Section loading={!loading}>
       <Wrap>
-        {type === "All" ? (
-          <div>
+        {type === "All" && (
+          <CardContainer>
             {[...NextData, ...NestData]
               .sort(() => Math.random() - 0.5)
-              .map((cur) => {
-                return <Card text={cur.title} />;
+              .map((cur, index: number) => {
+                return <Card key={index} text={cur.title} />;
               })}
-          </div>
-        ) : type === "Next.js" ? (
-          <div>
-            {NextData.map((cur) => {
-              return <Card text={cur.title} />;
+          </CardContainer>
+        )}
+
+        {type === "Nest.js" && (
+          <CardContainer>
+            {NestData.map((cur, index: number) => {
+              return <Card key={index} text={cur.title} />;
             })}
-          </div>
-        ) : (
-          <div>
-            {NestData.map((cur) => {
-              return <Card text={cur.title} />;
+          </CardContainer>
+        )}
+
+        {type === "Next.js" && (
+          <CardContainer>
+            {NextData.map((cur, index: number) => {
+              return <Card key={index} text={cur.title} />;
             })}
-          </div>
+          </CardContainer>
         )}
       </Wrap>
     </Section>
@@ -80,34 +84,6 @@ const Section = styled.section<{ loading: boolean }>`
 
 const Wrap = styled.div`
   width: 100%;
-
-  > div {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: row wrap;
-    > div {
-      width: calc(100% / 5);
-      height: 200px;
-      margin: 5px 15px;
-    }
-
-    > p {
-      color: #fff;
-    }
-  }
-
-  ${(props) => props.theme.window.mobile} {
-    > div {
-      width: 100%;
-      height: 200px;
-      margin: 5px 15px;
-    }
-
-    > p {
-      color: #fff;
-    }
-  }
 `;
 
 const FadeIn = keyframes`
@@ -116,5 +92,51 @@ const FadeIn = keyframes`
   }
   from {
     opacity: 1
+  }
+`;
+
+const CardContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+
+  > div {
+    width: calc((100% - 60px) / 5);
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  > div:not(:nth-of-type(5n)) {
+    margin-right: 15px;
+  }
+
+  ${(props) => props.theme.window.tab} {
+    > div {
+      width: calc((100% - 20px) / 3);
+    }
+
+    > div:not(:nth-of-type(5n)) {
+      margin-right: 0px;
+    }
+
+    > div:not(:nth-of-type(3n)) {
+      margin-right: 10px;
+    }
+  }
+
+  ${(props) => props.theme.window.mobile} {
+    > div {
+      width: calc((100% - 20px) / 2);
+      height: 180px;
+    }
+
+    > div:not(:nth-of-type(3n)) {
+      margin-right: 0px;
+    }
+
+    > div:not(:nth-of-type(2n)) {
+      margin-right: 20px;
+    }
   }
 `;

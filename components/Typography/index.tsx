@@ -5,14 +5,35 @@ import styled from "styled-components";
 const TypoStyle = {
   padding: "0px",
   color: "#fff",
-  lineHeight: "18px",
 };
 
 export const Text = styled.p`
   ${TypoStyle}
+  
+  font-weight: 400;
+  line-height: 18px;
+
+  ${(props) => props.theme.window.mobile} {
+    line-height: 24px;
+  }
+
+  ${(props) => props.theme.window.mobile} {
+    line-height: 36px;
+  }
 `;
 
 export const Title = styled.h1`
   ${TypoStyle}
-  font-family: 'Fira Sans', sans-serif;
+  line-height: 42px;
+
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+
+  ${(props) => props.theme.window.tab} {
+    line-height: 24px;
+  }
+
+  ${(props) => props.theme.window.mobile} {
+    line-height: 36px;
+  }
 `;
