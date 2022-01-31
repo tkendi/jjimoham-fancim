@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 html,
 body {
   padding: 0;
@@ -15,3 +18,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+::selection {
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+::-moz-selction {
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+`;
+
+export default GlobalStyle;

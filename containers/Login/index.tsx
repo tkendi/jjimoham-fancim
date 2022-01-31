@@ -1,14 +1,14 @@
-import React from "react";
-import styled, { ThemeConsumer } from "styled-components";
+import React from 'react';
+import styled, { ThemeConsumer } from 'styled-components';
 
 //components
-import { Container } from "components/Container";
-import { Title, Text } from "components/Typography";
+import { Container } from 'components/Container';
+import { Title, Text } from 'components/Typography';
 
 const LoginContainer = () => {
   return (
     <ThemeConsumer>
-      {(theme) => (
+      {() => (
         <Container>
           <LoginWrap>
             <Title>Login</Title>
@@ -22,11 +22,11 @@ const LoginContainer = () => {
               <label>
                 <Text>Password</Text>
               </label>
-              <LoginInput placeholder="Input your password" />
+              <LoginInput type="password" placeholder="Input your password" />
             </LoginInputWrap>
             <Footer>
               <SubmitButton>
-                <Text style={{ fontWeight: "bold" }}>Login</Text>
+                <Text style={{ fontWeight: 'bold' }}>Login</Text>
               </SubmitButton>
             </Footer>
           </LoginWrap>
@@ -65,12 +65,18 @@ const LoginInputWrap = styled.div`
 `;
 
 const LoginInput = styled.input`
-  width: calc(100% - 50px);
+  width: 100%;
   padding: 13px 15px;
+  color: #fff;
   border: 0px;
-  border-radius: 20px;
-  background: ${(props) => props.theme.color.GRAY2};
+  border-radius: 5px;
+  border: 1px solid ${(props) => props.theme.color.GRAY2};
+  background: transparent;
   outline: none;
+
+  :focus {
+    color: #fff;
+  }
 `;
 
 const Footer = styled.div`

@@ -1,14 +1,13 @@
-import type { AppProps } from "next/app";
-import { useEffect, useState } from "react";
-import { ThemeProvider } from "styled-components";
+import type { AppProps } from 'next/app';
+import { useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 //components
-import { FadeInCompo } from "components/Fade/FadeIn";
-
-import "../styles/globals.css";
+import { FadeInCompo } from 'components/Fade/FadeIn';
 
 //style layout
-import { theme } from "layout/theme";
+import GlobalStyle from '../styles/globals.css';
+import { theme } from 'Layout/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
@@ -23,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <></>
   ) : (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <FadeInCompo lazy={!loading}>
         <Component {...pageProps} />
       </FadeInCompo>
