@@ -9,9 +9,9 @@ const LoginContainer = () => {
   return (
     <ThemeConsumer>
       {() => (
-        <Container>
+        <CustomContainer>
           <LoginWrap>
-            <Title>Login</Title>
+            <Title style={{ marginBottom: '25px' }}>Login</Title>
             <LoginInputWrap>
               <label>
                 <Text>Email</Text>
@@ -28,9 +28,11 @@ const LoginContainer = () => {
               <SubmitButton>
                 <Text style={{ fontWeight: 'bold' }}>Login</Text>
               </SubmitButton>
+              <Divider />
+              <Text style={{ textAlign: 'center' }}>Create Account</Text>
             </Footer>
           </LoginWrap>
-        </Container>
+        </CustomContainer>
       )}
     </ThemeConsumer>
   );
@@ -38,15 +40,19 @@ const LoginContainer = () => {
 
 export default LoginContainer;
 
+const CustomContainer = styled(Container)`
+  min-height: calc(100vh - 180px);
+`;
+
 const LoginWrap = styled.div`
   width: 100%;
   height: 100%;
   max-width: 410px;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
+  margin-bottom: 50px;
+  padding: 30px;
   border: 1px solid ${(props) => props.theme.color.GRAY4};
   border-radius: 10px;
 
@@ -60,7 +66,7 @@ const LoginInputWrap = styled.div`
   display: flex;
   flex-direction: column;
   > label {
-    padding: 0px 5px;
+    padding: 15px 5px;
   }
 `;
 
@@ -92,4 +98,22 @@ const SubmitButton = styled.button`
   outline: none;
   border-radius: 10px;
   cursor: pointer;
+`;
+
+const Divider = styled.div`
+  width: 100%;
+  position: relative;
+  margin: 30px 0px;
+  border: 1px solid ${(props) => props.theme.color.GRAY1};
+
+  :after {
+    content: 'OR';
+    position: absolute;
+    top: -8px;
+    left: 45%;
+    font-size: 16px;
+    color: ${(props) => props.theme.color.GRAY2};
+    background: ${(props) => props.theme.color.PRIMARY};
+    z-index: 3;
+  }
 `;
