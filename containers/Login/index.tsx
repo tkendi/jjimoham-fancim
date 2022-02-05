@@ -29,7 +29,9 @@ const LoginContainer = () => {
                 <Text style={{ fontWeight: 'bold' }}>Login</Text>
               </SubmitButton>
               <Divider />
-              <Text style={{ textAlign: 'center' }}>Create Account</Text>
+              <Text style={{ textAlign: 'center', cursor: 'pointer' }}>
+                Create Account
+              </Text>
             </Footer>
           </LoginWrap>
         </CustomContainer>
