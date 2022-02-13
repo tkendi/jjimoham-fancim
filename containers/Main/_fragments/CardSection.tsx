@@ -128,7 +128,7 @@ const CardContainer = styled.div`
   ${(props) => props.theme.window.mobile} {
     > div {
       width: calc((100% - 20px) / 2);
-      height: 180px;
+      height: 250px;
     }
 
     > div:not(:nth-of-type(3n)) {
