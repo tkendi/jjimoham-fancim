@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 //config
-import { prefix } from "config/config";
+import { prefix } from 'config/config';
 
 //components
-import { Title } from "components/Typography";
+import { Title } from 'components/Typography';
 
 const BackImgWrap = () => {
   return (

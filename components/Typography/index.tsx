@@ -6,12 +6,17 @@ const TypoStyle = {
   padding: '0px',
   color: '#fff',
   margin: '0px',
-  background: "transparent"
+  background: 'transparent',
 };
 
-export const Text = styled.p`
+interface TypographyProps {
+  color?: string;
+}
+
+export const Text = styled.p<TypographyProps>`
   ${TypoStyle}
 
+  color: ${(props) => props.color};
   font-weight: 400;
   line-height: 18px;
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Nav = styled.nav<{ bgColor: string }>`
   width: 100%;
@@ -22,8 +22,9 @@ export const Title = styled.h1`
   width: 120px;
   padding: 0px;
   margin: 0px;
-  font-family: "Fredoka One", cursive;
-  font-weight: "400";
+  background-color: transparent;
+  font-family: 'Fredoka One', cursive;
+  font-weight: '400';
   font-size: 30px;
   display: flex;
   white-space: pre;
@@ -55,9 +56,10 @@ export const Menu = styled.div`
 export const LinkTitle = styled.p`
   padding: 0px;
   margin: 0px;
+  background-color: transparent;
   text-decoration: none;
   text-align: center;
-  font-family: "Hind", sans-serif;
+  font-family: 'Hind', sans-serif;
   font-size: 17px;
   font-weight: 600;
   :hover {

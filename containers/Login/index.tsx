@@ -1,28 +1,69 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
+import { useForm } from 'react-hook-form';
 
 //components
 import { Container } from 'components/Container';
 import { Title, Text } from 'components/Typography';
 
 const LoginContainer = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: 'onChange' });
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
+  const onError = (error: any) => {
+    console.log(error);
+  };
+
+  //watch 사용시 나오는 Values 확인
+  // React.useEffect(() => {
+  //   const subscription = watch((value, { name, type, }) =>
+  //     console.log(value, name, type),
+  //   );
+  //   return () => subscription.unsubscribe();
+  // }, [watch]);
+
   return (
     <ThemeConsumer>
-      {() => (
+      {(theme) => (
         <CustomContainer>
-          <LoginWrap>
+          <LoginWrap onSubmit={handleSubmit(onSubmit, onError)}>
             <Title style={{ marginBottom: '25px' }}>Login</Title>
             <LoginInputWrap>
               <label>
                 <Text>Email</Text>
               </label>
-              <LoginInput placeholder="Input your email" />
+              <LoginInput
+                autoComplete="off"
+                placeholder="Input your email"
+                {...register('email', {
+                  required: true,
+                  pattern: {
+                    value:
+                      /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+                    message: '이메일을 확인해 주세요',
+                  },
+                })}
+              />
+              <Text color={theme.color.WARNING} style={{ marginTop: '15px' }}>
+                {errors.email?.message}
+              </Text>
             </LoginInputWrap>
             <LoginInputWrap>
               <label>
                 <Text>Password</Text>
               </label>
-              <LoginInput type="password" placeholder="Input your password" />
+              <LoginInput
+                type="password"
+                autoComplete="off"
+                placeholder="Input your password"
+              />
             </LoginInputWrap>
             <Footer>
               <SubmitButton>
@@ -46,7 +87,7 @@ const CustomContainer = styled(Container)`
   min-height: calc(100vh - 180px);
 `;
 
-const LoginWrap = styled.div`
+const LoginWrap = styled.form`
   width: 100%;
   height: 100%;
   max-width: 410px;
