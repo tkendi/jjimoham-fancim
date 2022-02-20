@@ -29,6 +29,8 @@ const LoginContainer = () => {
   //   return () => subscription.unsubscribe();
   // }, [watch]);
 
+  console.log(errors)
+
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -63,7 +65,18 @@ const LoginContainer = () => {
                 type="password"
                 autoComplete="off"
                 placeholder="Input your password"
+                {...register('password', {
+                  required: true,
+                  pattern: {
+                    value:
+                      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
+                    message: '비밀번호 입력을 확인해 주세요',
+                  },
+                })}
               />
+              <Text color={theme.color.WARNING} style={{ marginTop: '15px' }}>
+                {errors.password?.message}
+              </Text>
             </LoginInputWrap>
             <Footer>
               <SubmitButton>

@@ -34,8 +34,8 @@ export const theme: DefaultTheme = {
     GRAY1: '#F7F7F7',
     GRAY0: '#FAFAFA',
     WHITE: '#FFFFFF',
-    WARNING: '#FF3399',
-    WARNINGSUB: '#F22A29',
+    WARNING: '#E62C34',
+    WARNINGSUB: '#FD553C',
   },
 
   window: {
