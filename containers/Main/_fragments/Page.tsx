@@ -7,7 +7,9 @@ interface Props {
 }
 
 const Page = ({ background, children }: Props) => {
-  const style = { backgroundImage: `url("${background}")` };
+  const style = {
+    backgroundImage: `url("${background}")`,
+  };
 
   const bgRef = useRef() as any;
   const centerRef = useRef() as any;
@@ -43,7 +45,7 @@ const Page = ({ background, children }: Props) => {
   });
 
   return (
-    <PageWrap style={style} ref={pageRef}>
+    <PageWrap ref={pageRef} style={style}>
       <Static ref={staticRef}>
         <Center ref={centerRef}>
           <Background style={style} ref={bgRef} />

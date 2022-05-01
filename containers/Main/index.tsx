@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import Image from 'next/image';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 //components
 import Page from './_fragments/Page';
@@ -34,10 +34,22 @@ const MainContainer = () => {
         </Wrap>
       </Page>
       <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg">
-        <Wrap style={{ position: 'relative' }}>
-          <SecondTitleWrap isClick={!isClick} onClick={() => setIsClick(true)}>
-            <Title>JJIMOHAM</Title>
-          </SecondTitleWrap>
+        <Wrap>
+          <SecondTitle isClick={isClick} onClick={() => setIsClick(true)}>
+            JJIMOHAM
+          </SecondTitle>
+          {/* <FollowCurosrWrap>
+            <div
+              style={{
+                position: 'absolute',
+                left: clientX,
+                top: clientY,
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <Image src="/images/Main/JJIMO.png" width={50} height={50} />
+            </div>
+          </FollowCurosrWrap>{' '} */}
         </Wrap>
       </Page>
     </Fragment>
@@ -46,18 +58,16 @@ const MainContainer = () => {
 
 export default MainContainer;
 
-interface SecondTitleWrapStyleProps {
+interface SecondTitleStyleProps {
   isClick: boolean;
 }
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  z-index: 999;
 
   h1 {
     font-size: 80px;
@@ -77,23 +87,23 @@ const FollowCurosrWrap = styled.div`
   pointer-events: none;
 `;
 
-const SecondTitleWrap = styled.div<SecondTitleWrapStyleProps>`
-  position: absolute;
-  cursor: default;
-  ${(props) =>
-    props.isClick &&
-    css`
-      animation: textMotion 0.3s linear 0s infinite alternate;
-      top: 0px;
-      cursor: pointer;
-    `}
-  @keyframes
-    textMotion {
-    0% {
-      top: 0px;
-    }
-    100% {
-      top: 10px;
-    }
+//animation SecondTitle
+const textMotion = keyframes`
+  0% {
+    top: 0px;
   }
+  100% {
+    top: 10px;
+  }  
+`;
+
+const SecondTitle = styled(Title)<SecondTitleStyleProps>`
+  ${(props) =>
+    !props.isClick &&
+    css`
+      width: max-content;
+      transform: translate(18%, 40%);
+      animation: ${textMotion} 380ms linear 0s infinite alternate;
+      /* cursor: pointer; */
+    `}
 `;
