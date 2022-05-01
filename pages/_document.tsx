@@ -1,11 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-const SITE_NAME = "찌모햄"
-const SITE_URL = "https://jjimoham.vercel.app/"
-const SITE_DESCRIPTION = "찌모햄 팬심"
-const SITE_TITLE = "햄떡햄떡"
-const SITE_IMAGE = "/images/og/OG.png"
+const SITE_NAME = '찌모햄';
+const SITE_URL = 'https://jjimoham.vercel.app/';
+const SITE_DESCRIPTION = '찌모햄 팬심';
+const SITE_TITLE = '햄떡햄떡';
+const SITE_IMAGE = '/images/og/OG.png';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -38,6 +38,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="manifest" href="/manifest.json" />
+
           <link rel="apple-touch-icon" href="/icons/120.png" />
           <link rel="apple-touch-icon" sizes="152x152" href="/icons/152.png" />
           <link rel="apple-touch-icon" sizes="180x180" href="/icons/180.png" />
