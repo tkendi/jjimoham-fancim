@@ -5,7 +5,7 @@ const SITE_NAME = '찌모햄';
 const SITE_URL = 'https://jjimoham.vercel.app/';
 const SITE_DESCRIPTION = '찌모햄 팬심';
 const SITE_TITLE = '햄떡햄떡';
-const SITE_IMAGE = '/images/og/OG.png';
+const SITE_IMAGE = '/og/OG.png';
 
 //GA CODE
 const GOOGLE_ANALYTICS_ID = 'G-LJL0J9XLD2';
