@@ -66,7 +66,7 @@ const PageWrap = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  &:not(:first-of-type) {
+  /* &:not(:first-of-type) {
     &:before {
       content: '';
       position: absolute;
@@ -77,7 +77,7 @@ const PageWrap = styled.div`
       box-shadow: inset 0 2px black, inset 0 10px 10px rgba(black, 0.8);
       z-index: 100;
     }
-  }
+  } */
 `;
 
 const Static = styled.div`

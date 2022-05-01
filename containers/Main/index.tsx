@@ -33,23 +33,12 @@ const MainContainer = () => {
           </FollowCurosrWrap>
         </Wrap>
       </Page>
+
       <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg">
         <Wrap>
           <SecondTitle isClick={isClick} onClick={() => setIsClick(true)}>
-            JJIMOHAM
+            JJIMO HAM
           </SecondTitle>
-          {/* <FollowCurosrWrap>
-            <div
-              style={{
-                position: 'absolute',
-                left: clientX,
-                top: clientY,
-                transform: 'translate(-50%, -50%)',
-              }}
-            >
-              <Image src="/images/Main/JJIMO.png" width={50} height={50} />
-            </div>
-          </FollowCurosrWrap>{' '} */}
         </Wrap>
       </Page>
     </Fragment>
@@ -98,12 +87,21 @@ const textMotion = keyframes`
 `;
 
 const SecondTitle = styled(Title)<SecondTitleStyleProps>`
+  cursor: pointer;
   ${(props) =>
     !props.isClick &&
     css`
       width: max-content;
-      transform: translate(18%, 40%);
+      transform: translate(0%, 40%);
       animation: ${textMotion} 380ms linear 0s infinite alternate;
       /* cursor: pointer; */
+    `}
+
+  ${(props) =>
+    props.isClick &&
+    css`
+      transform: translate(-115%, -880%);
+      transition: 580ms linear;
+      cursor: default;
     `}
 `;
