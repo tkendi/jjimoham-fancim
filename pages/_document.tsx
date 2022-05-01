@@ -132,6 +132,11 @@ class MyDocument extends Document {
           />
 
           {/* ga setting script */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+          />
+
           <script dangerouslySetInnerHTML={this.setGoogleAnalytics()} />
         </Head>
         <body>
