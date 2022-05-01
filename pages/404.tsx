@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
 
 //components
-import Header from "components/Header";
-import NotFoundContainer from "containers/404";
+import NotFoundContainer from 'containers/404';
+import Layout from 'components/Layout';
 
 const NotFound = () => {
   return (
     <React.Fragment>
-      <Header />
-      <NotFoundContainer />
+      <Layout noHeader title="찌모를 찾을 수 없어요">
+        <NotFoundContainer />
+      </Layout>
     </React.Fragment>
   );
 };

@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
 //container
-import MainContainer from "containers/Main";
+import MainContainer from 'containers/Main';
 
 //components
-import Layout from "components/Layout";
+import Layout from 'components/Layout';
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout noHeader>
       <MainContainer />
     </Layout>
   );

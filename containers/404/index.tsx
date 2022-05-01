@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 //components
-import { Container } from "components/Container";
-import { Title } from "components/Typography";
+import { Container } from 'components/Container';
+import { Title } from 'components/Typography';
 
 const NotFoundContainer = () => {
   return (

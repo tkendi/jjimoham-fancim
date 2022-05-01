@@ -1,38 +1,63 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment } from 'react';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 //components
-// import { LazyLoadCompo } from "components/Fade/FadeIn";
-import { Container } from "components/Container";
-import BackImgWrap from "./_fragments/BackImgWrap";
-import SelectCode from "./_fragments/SelectCode";
-import CardSection from "./_fragments/CardSection";
+import Page from './_fragments/Page';
+import { Title } from 'components/Typography';
+
+//hooks
+import useMousePosition from 'hooks/useMousePosition';
 
 const MainContainer = () => {
-  const [type, setType] = useState<"All" | "Nest.js" | "Next.js">("All");
+  const { clientX, clientY } = useMousePosition();
 
-  const [lazy, setLazy] = useState(true);
-
-  const selectCodeType = (type: "All" | "Nest.js" | "Next.js") => {
-    setType(type);
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLazy(false);
-    }, 100);
-  }, []);
-
-  return lazy ? (
-    <></>
-  ) : (
-    <React.Fragment>
-      <Container>
-        <BackImgWrap />
-        <SelectCode codeType={type} selectCodeType={selectCodeType} />
-        <CardSection type={type} />
-      </Container>
-    </React.Fragment>
+  return (
+    <Fragment>
+      <Page background="https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg">
+        <Wrap>
+          <Title>JJIMO HAM</Title>
+          <FollowCurosrWrap>
+            <div
+              style={{
+                position: 'absolute',
+                left: clientX,
+                top: clientY,
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <Image src="/images/Main/JJIMO.png" width={50} height={50} />
+            </div>
+          </FollowCurosrWrap>
+        </Wrap>
+      </Page>
+      <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg"></Page>
+    </Fragment>
   );
 };
 
 export default MainContainer;
+
+const Wrap = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 80px;
+  }
+`;
+
+const FollowCurosrWrap = styled.div`
+  width: 100%;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  pointer-events: none;
+`;
