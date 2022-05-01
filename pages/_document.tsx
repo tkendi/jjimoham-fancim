@@ -7,6 +7,9 @@ const SITE_DESCRIPTION = '찌모햄 팬심';
 const SITE_TITLE = '햄떡햄떡';
 const SITE_IMAGE = '/images/og/OG.png';
 
+//GA CODE
+const GOOGLE_ANALYTICS_ID = 'G-LJL0J9XLD2';
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
     const sheet = new ServerStyleSheet();
@@ -32,6 +35,17 @@ class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  setGoogleAnalytics() {
+    return {
+      __html: `        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GOOGLE_ANALYTICS_ID}');
+      `,
+    };
   }
 
   render() {
@@ -116,6 +130,9 @@ class MyDocument extends Document {
             href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
             rel="stylesheet"
           />
+
+          {/* ga setting script */}
+          <script dangerouslySetInnerHTML={this.setGoogleAnalytics()} />
         </Head>
         <body>
           <Main />
