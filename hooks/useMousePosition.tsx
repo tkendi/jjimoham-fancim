@@ -7,7 +7,7 @@ const useMousePosition = () => {
   });
 
   useEffect(() => {
-    const updatePosition = (e) => {
+    const updatePosition = (e: any) => {
       const { clientX, clientY } = e;
       setPosition({ clientX, clientY });
     };

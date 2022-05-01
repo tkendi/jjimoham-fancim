@@ -31,7 +31,10 @@ const MainContainer = () => {
           </FollowCurosrWrap>
         </Wrap>
       </Page>
-      <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg"></Page>
+      <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg">
+        <>
+        </>
+      </Page>
     </Fragment>
   );
 };
