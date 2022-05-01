@@ -32,8 +32,7 @@ const MainContainer = () => {
         </Wrap>
       </Page>
       <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg">
-        <>
-        </>
+        <></>
       </Page>
     </Fragment>
   );
@@ -50,6 +49,7 @@ const Wrap = styled.div`
 
   h1 {
     font-size: 80px;
+    white-space: pre;
   }
 `;
 
