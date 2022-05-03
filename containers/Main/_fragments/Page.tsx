@@ -2,11 +2,12 @@ import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 interface Props {
+  id?: string;
   background: string;
   children: JSX.Element;
 }
 
-const Page = ({ background, children }: Props) => {
+const Page = ({ id, background, children }: Props) => {
   const style = {
     backgroundImage: `url("${background}")`,
   };
@@ -45,7 +46,7 @@ const Page = ({ background, children }: Props) => {
   });
 
   return (
-    <PageWrap ref={pageRef} style={style}>
+    <PageWrap id={id} ref={pageRef} style={style}>
       <Static ref={staticRef}>
         <Center ref={centerRef}>
           <Background style={style} ref={bgRef} />

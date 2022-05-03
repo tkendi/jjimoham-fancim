@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Image from 'next/image';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 //components
 import Page from './_fragments/Page';
@@ -9,17 +9,41 @@ import { Title } from 'components/Typography';
 //hooks
 import useMousePosition from 'hooks/useMousePosition';
 
+//styles
+import { Bounce } from 'styles/animation';
+
 const MainContainer = () => {
   const [isClick, setIsClick] = useState(false);
 
   const { clientX, clientY } = useMousePosition();
 
+  const handleDeletePotImage = () => {
+    const potImage = document.getElementById('pot-image');
+    potImage?.remove();
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', (e) => {
+      const image = document.createElement('img');
+      const imageWrap = document.getElementById('create-image-wrap');
+      image.id = 'pot-image';
+      image.src = '/images/Main/JJIMO.png';
+      image.style.width = '50px';
+      image.style.height = '50px';
+      image.style.position = 'absolute';
+      image.style.left = e.clientX + 'px';
+      image.style.top = e.clientY + 'px';
+      image.style.transform = 'translate(-50%, -50%)';
+      imageWrap?.appendChild(image);
+    });
+  }, []);
+
   return (
     <Fragment>
       <Page background="https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg">
         <Wrap>
-          <Title>JJIMO HAM</Title>
-          <FollowCurosrWrap>
+          <Title onClick={handleDeletePotImage}>JJIMO HAM</Title>
+          <FollowCurosrWrap id="create-image-wrap">
             <div
               style={{
                 position: 'absolute',
@@ -77,14 +101,6 @@ const FollowCurosrWrap = styled.div`
 `;
 
 //animation SecondTitle
-const textMotion = keyframes`
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 10px;
-  }  
-`;
 
 const SecondTitle = styled(Title)<SecondTitleStyleProps>`
   cursor: pointer;
@@ -92,9 +108,8 @@ const SecondTitle = styled(Title)<SecondTitleStyleProps>`
     !props.isClick &&
     css`
       width: max-content;
-      transform: translate(0%, 40%);
-      animation: ${textMotion} 380ms linear 0s infinite alternate;
-      /* cursor: pointer; */
+      transform: translate(-1%, 40%);
+      animation: ${Bounce} 380ms linear 0s infinite alternate;
     `}
 
   ${(props) =>
