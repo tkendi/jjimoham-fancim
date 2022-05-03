@@ -32,5 +32,4 @@ const Body = styled.div`
   min-height: 100vh;
   min-height: calc(100vh - 80px);
   background-color: #1a1a1a;
-  /* padding: 50px 0px; */
 `;

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
@@ -10,7 +10,7 @@ import { Title } from 'components/Typography';
 import useMousePosition from 'hooks/useMousePosition';
 
 //styles
-import { Bounce } from 'styles/animation';
+import { Bounce, FadeOut } from 'styles/animation';
 
 const MainContainer = () => {
   const [isClick, setIsClick] = useState(false);
@@ -39,7 +39,7 @@ const MainContainer = () => {
   }, []);
 
   return (
-    <Fragment>
+    <Container>
       <Page background="https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg">
         <Wrap>
           <Title onClick={handleDeletePotImage}>JJIMO HAM</Title>
@@ -63,9 +63,11 @@ const MainContainer = () => {
           <SecondTitle isClick={isClick} onClick={() => setIsClick(true)}>
             JJIMO HAM
           </SecondTitle>
+
+          {/* <ImageContainer></ImageContainer> */}
         </Wrap>
       </Page>
-    </Fragment>
+    </Container>
   );
 };
 
@@ -74,6 +76,20 @@ export default MainContainer;
 interface SecondTitleStyleProps {
   isClick: boolean;
 }
+
+const Container = styled.div`
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.color.GRAY3};
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${(props) => props.theme.color.GRAY1};
+    border-radius: 10px;
+  }
+`;
 
 const Wrap = styled.div`
   width: 100%;
@@ -100,23 +116,29 @@ const FollowCurosrWrap = styled.div`
   pointer-events: none;
 `;
 
-//animation SecondTitle
-
 const SecondTitle = styled(Title)<SecondTitleStyleProps>`
+  transform: translate(-1%, 40%);
   cursor: pointer;
-  ${(props) =>
-    !props.isClick &&
-    css`
-      width: max-content;
-      transform: translate(-1%, 40%);
-      animation: ${Bounce} 380ms linear 0s infinite alternate;
-    `}
 
   ${(props) =>
     props.isClick &&
     css`
-      transform: translate(-115%, -880%);
-      transition: 580ms linear;
+      animation: ${FadeOut} 580ms linear 0s forwards;
       cursor: default;
     `}
+
+  ${(props) =>
+    !props.isClick &&
+    css`
+      width: max-content;
+      animation: ${Bounce} 380ms linear 0s infinite alternate;
+    `}
 `;
+
+// const ImageContainer = styled.div`
+//   width: 300px;
+//   height: 300px;
+//   border-radius: 50%;
+//   background-color: #1a1a1a;
+//   z-index: 9;
+// `;

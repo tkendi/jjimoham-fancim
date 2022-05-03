@@ -9,6 +9,15 @@ export const FadeIn = keyframes`
   }
 `;
 
+export const FadeOut = keyframes`
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
 export const Bounce = keyframes`
   0% {
     top: 0px;
