@@ -10,7 +10,7 @@ import { Title } from 'components/Typography';
 import useMousePosition from 'hooks/useMousePosition';
 
 //styles
-import { Bounce, FadeOut } from 'styles/animation';
+import { Bounce, FadeIn, FadeOut, sizeUp } from 'styles/animation';
 
 const MainContainer = () => {
   const [isClick, setIsClick] = useState(false);
@@ -18,8 +18,10 @@ const MainContainer = () => {
   const { clientX, clientY } = useMousePosition();
 
   const handleDeletePotImage = () => {
-    const potImage = document.getElementById('pot-image');
-    potImage?.remove();
+    // const potImage = document.getElementById('create-image-wrap');
+    // potImage?.childNodes.forEach(
+    //   (element) => element?.id === 'pot-image' && element.remove(),
+    // );
   };
 
   useEffect(() => {
@@ -58,13 +60,40 @@ const MainContainer = () => {
         </Wrap>
       </Page>
 
-      <Page background="http://sfwallpaper.com/images/background-images-hd-18.jpg">
+      <Page background="/images/Main/MainTop.png">
         <Wrap>
           <SecondTitle isClick={isClick} onClick={() => setIsClick(true)}>
             JJIMO HAM
           </SecondTitle>
 
-          {/* <ImageContainer></ImageContainer> */}
+          {isClick && (
+            <ImageContainer>
+              <CircleImage
+                source="/og/OG.png"
+                top="250"
+                left="160"
+                style={{ transform: 'rotate(20deg)' }}
+              />
+              <CircleImage
+                source="/og/OG.png"
+                bottom="250"
+                left="160"
+                style={{ transform: 'rotate(20deg)' }}
+              />
+              <CircleImage
+                source="/og/OG.png"
+                top="250"
+                right="160"
+                style={{ transform: 'rotate(-20deg)' }}
+              />
+              <CircleImage
+                source="/og/OG.png"
+                bottom="250"
+                right="160"
+                style={{ transform: 'rotate(-20deg)' }}
+              />
+            </ImageContainer>
+          )}
         </Wrap>
       </Page>
     </Container>
@@ -75,6 +104,14 @@ export default MainContainer;
 
 interface SecondTitleStyleProps {
   isClick: boolean;
+}
+
+interface CircleImagStyleProps {
+  source: string;
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
 }
 
 const Container = styled.div`
@@ -135,10 +172,37 @@ const SecondTitle = styled(Title)<SecondTitleStyleProps>`
     `}
 `;
 
-// const ImageContainer = styled.div`
-//   width: 300px;
-//   height: 300px;
-//   border-radius: 50%;
-//   background-color: #1a1a1a;
-//   z-index: 9;
-// `;
+const ImageContainer = styled.div`
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #1a1a1a;
+  z-index: 9;
+  animation: ${FadeIn} 580ms linear 0s forwards;
+  animation: ${sizeUp} 480ms linear 0s forwards;
+  cursor: default;
+`;
+
+const CircleImage = styled.div<CircleImagStyleProps>`
+  position: absolute;
+  top: ${(props) => props.top}px;
+  right: ${(props) => props.right}px;
+  bottom: ${(props) => props.bottom}px;
+  left: ${(props) => props.left}px;
+
+  width: 400px;
+  height: 400px;
+
+  background-image: url(${(props) => props.source});
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+
+  transition: transform 200ms linear;
+
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.22);
+  }
+`;
