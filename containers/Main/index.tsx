@@ -12,10 +12,16 @@ import useMousePosition from 'hooks/useMousePosition';
 //styles
 import { Bounce, FadeIn, FadeOut, sizeUp } from 'styles/animation';
 
+const HOVER_BACKGROUND_IMG = [
+  '/images/Main/mainHoverBackground.png',
+  '/images/Main/mainHoverBackground2.png',
+  '/images/Main/mainHoverBackground3.png',
+  '/images/Main/mainHoverBackground4.png',
+] as const;
+
 const MainContainer = () => {
   const [isClick, setIsClick] = useState(false);
-
-  const { clientX, clientY } = useMousePosition();
+  const [randomCount, setRandomCount] = useState(0);
 
   const handleDeletePotImage = () => {
     // const potImage = document.getElementById('create-image-wrap');
@@ -23,6 +29,18 @@ const MainContainer = () => {
     //   (element) => element?.id === 'pot-image' && element.remove(),
     // );
   };
+
+  const getRandomIntInclusive = () => {
+    const min = 0;
+    const max = 3;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  const handleClickImage = () => {
+    setRandomCount(getRandomIntInclusive());
+  };
+
+  const { clientX, clientY } = useMousePosition();
 
   useEffect(() => {
     document.addEventListener('click', (e) => {
@@ -67,31 +85,44 @@ const MainContainer = () => {
           </SecondTitle>
 
           {isClick && (
-            <ImageContainer>
+            <ImageContainer
+              style={{
+                backgroundImage: `url(${
+                  HOVER_BACKGROUND_IMG[randomCount]
+                })`,
+              }}
+            >
               <CircleImage
                 source="/og/OG.png"
                 top="250"
                 left="160"
                 style={{ transform: 'rotate(20deg)' }}
+                onClick={handleClickImage}
               />
               <CircleImage
                 source="/og/OG.png"
                 bottom="250"
                 left="160"
                 style={{ transform: 'rotate(20deg)' }}
+                onClick={handleClickImage}
               />
               <CircleImage
                 source="/og/OG.png"
                 top="250"
                 right="160"
                 style={{ transform: 'rotate(-20deg)' }}
+                onClick={handleClickImage}
               />
               <CircleImage
                 source="/og/OG.png"
                 bottom="250"
                 right="160"
                 style={{ transform: 'rotate(-20deg)' }}
+                onClick={handleClickImage}
               />
+              <Wrap>
+                <Title>Monster JJIMO</Title>
+              </Wrap>
             </ImageContainer>
           )}
         </Wrap>
@@ -203,6 +234,6 @@ const CircleImage = styled.div<CircleImagStyleProps>`
   cursor: pointer;
 
   :hover {
-    transform: scale(1.22);
+    transform: scale(1.22) !important;
   }
 `;
