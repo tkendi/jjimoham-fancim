@@ -90,7 +90,7 @@ const MainContainer = () => {
                 backgroundImage: `url(${HOVER_BACKGROUND_IMG[randomCount]})`,
               }}
             >
-              <ImageWrap style={{ marginTop: '80px' }}>
+              {/* <ImageWrap style={{ marginTop: '80px' }}>
                 <CircleImage
                   source="/og/OG.png"
                   style={{ transform: 'rotate(20deg)' }}
@@ -101,7 +101,7 @@ const MainContainer = () => {
                   style={{ transform: 'rotate(-20deg)' }}
                   onClick={handleClickImage}
                 />
-              </ImageWrap>
+              </ImageWrap> */}
               <Wrap>
                 <Title
                   onClick={() =>
@@ -110,19 +110,19 @@ const MainContainer = () => {
                 >
                   Monster JJIMO
                 </Title>
+                <CircleImage
+                  source="/og/OG.png"
+                  style={{ transform: 'rotate(-20deg)', marginLeft: "20px" }}
+                  onClick={handleClickImage}
+                />
               </Wrap>
-              <ImageWrap style={{ marginBottom: '80px' }}>
+              {/* <ImageWrap style={{ marginBottom: '80px' }}>
                 <CircleImage
                   source="/og/OG.png"
                   style={{ transform: 'rotate(20deg)' }}
                   onClick={handleClickImage}
                 />
-                <CircleImage
-                  source="/og/OG.png"
-                  style={{ transform: 'rotate(-20deg)' }}
-                  onClick={handleClickImage}
-                />
-              </ImageWrap>
+              </ImageWrap> */}
             </ImageContainer>
           )}
         </Wrap>
@@ -219,13 +219,13 @@ const ImageContainer = styled.div`
   cursor: default;
 `;
 
-const ImageWrap = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 20px;
-`;
+// const ImageWrap = styled.div`
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 0px 20px;
+// `;
 
 const CircleImage = styled.div<CircleImagStyleProps>`
   width: 200px;
