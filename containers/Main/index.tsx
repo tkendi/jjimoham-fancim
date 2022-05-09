@@ -87,42 +87,42 @@ const MainContainer = () => {
           {isClick && (
             <ImageContainer
               style={{
-                backgroundImage: `url(${
-                  HOVER_BACKGROUND_IMG[randomCount]
-                })`,
+                backgroundImage: `url(${HOVER_BACKGROUND_IMG[randomCount]})`,
               }}
             >
-              <CircleImage
-                source="/og/OG.png"
-                top="250"
-                left="160"
-                style={{ transform: 'rotate(20deg)' }}
-                onClick={handleClickImage}
-              />
-              <CircleImage
-                source="/og/OG.png"
-                bottom="250"
-                left="160"
-                style={{ transform: 'rotate(20deg)' }}
-                onClick={handleClickImage}
-              />
-              <CircleImage
-                source="/og/OG.png"
-                top="250"
-                right="160"
-                style={{ transform: 'rotate(-20deg)' }}
-                onClick={handleClickImage}
-              />
-              <CircleImage
-                source="/og/OG.png"
-                bottom="250"
-                right="160"
-                style={{ transform: 'rotate(-20deg)' }}
-                onClick={handleClickImage}
-              />
+              <ImageWrap style={{ marginTop: '80px' }}>
+                <CircleImage
+                  source="/og/OG.png"
+                  style={{ transform: 'rotate(20deg)' }}
+                  onClick={handleClickImage}
+                />
+                <CircleImage
+                  source="/og/OG.png"
+                  style={{ transform: 'rotate(-20deg)' }}
+                  onClick={handleClickImage}
+                />
+              </ImageWrap>
               <Wrap>
-                <Title>Monster JJIMO</Title>
+                <Title
+                  onClick={() =>
+                    window.open('https://www.twitch.tv/midong1030')
+                  }
+                >
+                  Monster JJIMO
+                </Title>
               </Wrap>
+              <ImageWrap style={{ marginBottom: '80px' }}>
+                <CircleImage
+                  source="/og/OG.png"
+                  style={{ transform: 'rotate(20deg)' }}
+                  onClick={handleClickImage}
+                />
+                <CircleImage
+                  source="/og/OG.png"
+                  style={{ transform: 'rotate(-20deg)' }}
+                  onClick={handleClickImage}
+                />
+              </ImageWrap>
             </ImageContainer>
           )}
         </Wrap>
@@ -207,6 +207,11 @@ const ImageContainer = styled.div`
   position: absolute;
   width: 300px;
   height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background-color: #1a1a1a;
   z-index: 9;
   animation: ${FadeIn} 580ms linear 0s forwards;
@@ -214,15 +219,17 @@ const ImageContainer = styled.div`
   cursor: default;
 `;
 
-const CircleImage = styled.div<CircleImagStyleProps>`
-  position: absolute;
-  top: ${(props) => props.top}px;
-  right: ${(props) => props.right}px;
-  bottom: ${(props) => props.bottom}px;
-  left: ${(props) => props.left}px;
+const ImageWrap = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+`;
 
-  width: 400px;
-  height: 400px;
+const CircleImage = styled.div<CircleImagStyleProps>`
+  width: 200px;
+  height: 200px;
 
   background-image: url(${(props) => props.source});
   background-position: center center;
