@@ -88,10 +88,6 @@ class MyDocument extends Document {
             name="format-detection"
             content="telephone=no, address=no, email=no"
           />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-          />
 
           <link rel="shortcut icon" href="/favicon.ico" />
 

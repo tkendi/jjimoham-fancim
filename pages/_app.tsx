@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import Head from 'next/head';
+
 
 //components
 import { FadeInCompo } from 'components/Fade/FadeIn';
@@ -22,6 +24,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <></>
   ) : (
     <ThemeProvider theme={theme}>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+      </Head>
       <GlobalStyle />
       <FadeInCompo lazy={!loading}>
         <Component {...pageProps} />
