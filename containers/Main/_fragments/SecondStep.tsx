@@ -13,7 +13,7 @@ const SecondStep = () => {
 
   const getRandomIntInclusive = () => {
     const min = 0;
-    const max = 3;
+    const max = 16;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
@@ -22,6 +22,18 @@ const SecondStep = () => {
   };
 
   const HOVER_BACKGROUND_IMG = [
+    '/images/Main/mainHoverBackground.png',
+    '/images/Main/mainHoverBackground2.png',
+    '/images/Main/mainHoverBackground3.png',
+    '/images/Main/mainHoverBackground4.png',
+    '/images/Main/mainHoverBackground.png',
+    '/images/Main/mainHoverBackground2.png',
+    '/images/Main/mainHoverBackground3.png',
+    '/images/Main/mainHoverBackground4.png',
+    '/images/Main/mainHoverBackground.png',
+    '/images/Main/mainHoverBackground2.png',
+    '/images/Main/mainHoverBackground3.png',
+    '/images/Main/mainHoverBackground4.png',
     '/images/Main/mainHoverBackground.png',
     '/images/Main/mainHoverBackground2.png',
     '/images/Main/mainHoverBackground3.png',
@@ -74,7 +86,7 @@ interface CircleImagStyleProps {
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,8 +118,8 @@ const SecondTitle = styled(Title)<SecondTitleStyleProps>`
 
 const ImageContainer = styled.div`
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
 
   display: flex;
   flex-direction: column;
@@ -120,17 +132,9 @@ const ImageContainer = styled.div`
   cursor: default;
 `;
 
-// const ImageWrap = styled.div`
-//   width: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 0px 20px;
-// `;
-
 const CircleImage = styled.div<CircleImagStyleProps>`
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 
   background-image: url(${(props) => props.source});
   background-position: center center;
@@ -143,6 +147,6 @@ const CircleImage = styled.div<CircleImagStyleProps>`
   cursor: pointer;
 
   :hover {
-    transform: scale(1.22) !important;
+    transform: scale(1.10) !important;
   }
 `;
