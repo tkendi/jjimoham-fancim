@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FIXED_SOCIAL_LIST = [
-  { id: 1, title: 'JJIMOHAM', color: '#3d3d3d', link: '/' },
+  {
+    id: 1,
+    title: 'JJIGAEDEO',
+    color: '#9567fd',
+    link: 'https://tgd.kr/s/midong1030',
+  },
   {
     id: 2,
     title: 'INSTAGRAM',
