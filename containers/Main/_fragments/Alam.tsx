@@ -22,7 +22,7 @@ const Alam = () => {
     <Wrap>
       <AlamText>
         찌모는{' '}
-        {data?.data.filter((items) => items.is_live !== false)
+        {data?.data.findIndex((items) => items.is_live !== false) === -1
           ? '휴식중'
           : '방송중'}
       </AlamText>
