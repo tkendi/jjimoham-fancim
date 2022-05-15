@@ -25,6 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, 100);
 
     postToken();
+
+    console.log('made by tkendi');
   }, []);
 
   return loading ? (
