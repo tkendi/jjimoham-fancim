@@ -31,9 +31,5 @@ export const getStreamerInfo = (id: string) => {
     })
     .then((res) => {
       return res.data as StreamerResponseType;
-    })
-    .catch((error) => {
-      console.error('errors', error.response.data);
-      alert('찌모햄 데이터를 불러오지 못했습니다. 관리자에게 문의해 주세요');
     });
 };
