@@ -31,16 +31,7 @@ export const Text = styled.p<TypographyProps>`
 
 export const Title = styled.h1`
   ${TypoStyle}
-  line-height: 42px;
 
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
-
-  ${(props) => props.theme.window.tab} {
-    line-height: 24px;
-  }
-
-  ${(props) => props.theme.window.mobile} {
-    line-height: 36px;
-  }
 `;

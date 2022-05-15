@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 //components
 import Page from './_fragments/Page';
-
 import FirstStep from './_fragments/FirstStep';
 import SecondStep from './_fragments/SecondStep';
+import ThirdStep from './_fragments/ThirdStep';
 import Alam from './_fragments/Alam';
 
 const MainContainer = () => {
@@ -36,6 +36,11 @@ const MainContainer = () => {
       <Page background="/images/Main/MainTop.png">
         <Wrap>
           <SecondStep />
+        </Wrap>
+      </Page>
+      <Page background="">
+        <Wrap>
+          <ThirdStep />
         </Wrap>
       </Page>
       <Alam />
