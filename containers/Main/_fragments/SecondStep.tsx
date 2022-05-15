@@ -13,7 +13,7 @@ const SecondStep = () => {
 
   const getRandomIntInclusive = () => {
     const min = 0;
-    const max = 16;
+    const max = 15;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
@@ -147,6 +147,6 @@ const CircleImage = styled.div<CircleImagStyleProps>`
   cursor: pointer;
 
   :hover {
-    transform: scale(1.10) !important;
+    transform: scale(1.1) !important;
   }
 `;

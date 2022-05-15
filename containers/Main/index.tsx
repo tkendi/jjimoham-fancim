@@ -6,6 +6,7 @@ import Page from './_fragments/Page';
 
 import FirstStep from './_fragments/FirstStep';
 import SecondStep from './_fragments/SecondStep';
+import Alam from './_fragments/Alam';
 
 const MainContainer = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const MainContainer = () => {
           <SecondStep />
         </Wrap>
       </Page>
+      <Alam />
     </Container>
   );
 };

@@ -92,6 +92,8 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" />
 
           {/* google fonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
@@ -114,12 +116,15 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
 
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&display=swap"
             rel="stylesheet"
           />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+            rel="stylesheet"
+          ></link>
 
           {/* <!-- Boxicons CDN Link --> */}
           <link
