@@ -9,6 +9,8 @@ import { Text } from 'components/Typography';
 import { getStreamerInfo } from 'api/GET';
 
 const Alam = () => {
+  console.log(process.env.TWITCH_CLIENT_ID);
+
   const { data } = useQuery(
     'streamer-info',
     () => getStreamerInfo('midong1030'),
