@@ -14,7 +14,7 @@ const Alam = () => {
     () => getStreamerInfo('midong1030'),
     {
       retry: 1,
-      enabled: process.env.TWITCH_CLIENT_ID !== '',
+      enabled: process.env.TWITCH_CLIENT_ID !== undefined,
     },
   );
 
