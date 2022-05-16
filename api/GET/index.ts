@@ -18,12 +18,13 @@ type StreamerResponseType = {
   pagination: string;
 };
 
-export const getStreamerInfo = (id: string) => {
-  return axios
+export const getStreamerInfo = async (id: string) => {
+  console.log('second');
+  return await axios
     .get(`https://api.twitch.tv/helix/search/channels`, {
       headers: {
         Authorization: 'Bearer' + ' ' + CookieGetToken(),
-        'client-id': process.env.NEXT_PUBLIC_TWITCH_CLIENT_ID as string,
+        'client-id': process.env.TWITCH_CLIENT_ID as string,
       },
       params: {
         query: id,
