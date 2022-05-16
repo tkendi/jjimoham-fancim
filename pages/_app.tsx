@@ -24,10 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       setLoading(false);
     }, 100);
 
-    (async function () {
-      console.log("fist")
-      await postToken();
-    })();
+    postToken();
 
     console.log('made by tkendi');
   }, []);

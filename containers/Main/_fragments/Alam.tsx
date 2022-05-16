@@ -9,14 +9,12 @@ import { Text } from 'components/Typography';
 import { getStreamerInfo } from 'api/GET';
 
 const Alam = () => {
-  console.log(process.env.TWITCH_CLIENT_ID);
-
   const { data } = useQuery(
     'streamer-info',
     () => getStreamerInfo('midong1030'),
     {
       retry: 1,
-      enabled: process.env.TWITCH_CLIENT_ID !== undefined,
+      enabled: process.env.NEXT_PUBLIC_TWITCH_CLIENT_ID !== undefined,
     },
   );
 
