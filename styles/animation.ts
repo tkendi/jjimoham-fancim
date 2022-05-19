@@ -53,13 +53,13 @@ export const sizeUp = keyframes`
 
 export const widthUp = keyframes`
 0% {
-  width: 0%;
+  width: 1%;
 }
 
 50% {
   width: 50%;
 }
 100% {
-  width: 100%
+  width: 100%;
 }
 `;

@@ -77,6 +77,7 @@ const Wrap = styled.div`
 const SocialContainer = styled.div`
   width: 100%;
   height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -84,20 +85,28 @@ const SocialContainer = styled.div`
 `;
 
 const SocialHoverBox = styled.div<SocialHoverBoxStyleProps>`
-  width: 100%;
+  width: 100vw;
   height: calc(100% / 4);
   padding: 0px 30px;
+
+  position: relative;
 
   display: flex;
   align-items: center;
 
-  h1 {
-    width: 100%;
-  }
+  transition: width 180ms ease-in-out;
+
 
   :hover {
-    animation: ${widthUp} 180ms linear 0s forwards;
-    background-color: ${(props) => props.color};
+    ::before {
+      content: '';
+      position: absolute;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      animation: ${widthUp} 200ms linear 0s forwards;
+      background-color: ${(props) => props.color};
+    }
     cursor: pointer;
   }
 `;
