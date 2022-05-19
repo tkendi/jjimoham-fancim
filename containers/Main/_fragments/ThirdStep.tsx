@@ -94,8 +94,6 @@ const SocialHoverBox = styled.div<SocialHoverBoxStyleProps>`
   display: flex;
   align-items: center;
 
-  transition: width 180ms ease-in-out;
-
 
   :hover {
     ::before {
