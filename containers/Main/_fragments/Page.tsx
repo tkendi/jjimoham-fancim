@@ -5,9 +5,10 @@ interface Props {
   id?: string;
   background: string;
   children: JSX.Element;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const Page = ({ id, background, children }: Props) => {
+const Page = ({ id, background, children, onClick }: Props) => {
   const style = {
     backgroundImage: `url("${background}")`,
   };
@@ -46,7 +47,7 @@ const Page = ({ id, background, children }: Props) => {
   });
 
   return (
-    <PageWrap id={id} ref={pageRef} style={style}>
+    <PageWrap id={id} ref={pageRef} style={style} onClick={onClick && onClick}>
       <Static ref={staticRef}>
         <Center ref={centerRef}>
           <Background style={style} ref={bgRef} />

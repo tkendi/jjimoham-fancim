@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 //components
@@ -9,25 +9,28 @@ import ThirdStep from './_fragments/ThirdStep';
 import Alam from './_fragments/Alam';
 
 const MainContainer = () => {
-  useEffect(() => {
-    document.addEventListener('click', (e) => {
-      const image = document.createElement('img');
-      const imageWrap = document.getElementById('create-image-wrap');
-      image.id = 'pot-image';
-      image.src = '/images/Main/JJIMO.png';
-      image.style.width = '50px';
-      image.style.height = '50px';
-      image.style.position = 'absolute';
-      image.style.left = e.clientX + 'px';
-      image.style.top = e.clientY + 'px';
-      image.style.transform = 'translate(-50%, -50%)';
-      imageWrap?.appendChild(image);
-    });
-  }, []);
+  const onClickFirstStep = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    const image = document.createElement('img');
+    const imageWrap = document.getElementById('create-image-wrap');
+    image.id = 'pot-image';
+    image.src = '/images/Main/JJIMO.png';
+    image.style.width = '50px';
+    image.style.height = '50px';
+    image.style.position = 'absolute';
+    image.style.left = e.clientX + 'px';
+    image.style.top = e.clientY + 'px';
+    image.style.transform = 'translate(-50%, -50%)';
+    imageWrap?.appendChild(image);
+  };
 
   return (
     <Container>
-      <Page background="https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg">
+      <Page
+        background="https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg"
+        onClick={onClickFirstStep}
+      >
         <Wrap>
           <FirstStep />
         </Wrap>
