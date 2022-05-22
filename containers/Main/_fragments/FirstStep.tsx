@@ -11,9 +11,15 @@ import { Title } from 'components/Typography';
 const FirstStep = () => {
   const { clientX, clientY } = useMousePosition();
 
+  const onRemoveSticker = () => {
+    // document
+    //   .getElementById('create-image-wrap')
+    //   ?.childNodes.forEach((node) => node.remove());
+  };
+
   return (
     <>
-      <Title>JJIMO HAM</Title>
+      <Title onClick={onRemoveSticker}>JJIMO HAM</Title>
       <FollowCurosrWrap id="create-image-wrap">
         <div
           style={{
