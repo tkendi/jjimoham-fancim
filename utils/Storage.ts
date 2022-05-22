@@ -14,7 +14,7 @@ export const CookieRemoveToken = () => {
 };
 
 // 자동 로그인, 일반 로그인 모두 cookie 사용 (js-cookie)
-export const CookieSetToken = (token: string, expireDate?: number) => {
+export const CookieSetToken = (token: string, expireDate?: number | Date) => {
   if (expireDate) {
     Cookies.set('@token', token, { expires: expireDate });
   } else {

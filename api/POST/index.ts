@@ -18,7 +18,10 @@ export const postToken = async () => {
       })
       .then((res) => {
         const data = res.data as PostTokenData;
-        CookieSetToken(data.access_token, data.expires_in);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        
+        CookieSetToken(data.access_token, currentDate);
       })
       .catch((error: any) => {
         console.log('error', error.response.data);
