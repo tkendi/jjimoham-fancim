@@ -1,8 +1,9 @@
-import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
-import Head from 'next/head';
+import axios from 'axios';
 
 // api
 import { postToken } from 'api/POST';
@@ -13,7 +14,6 @@ import { FadeInCompo } from 'components/Fade/FadeIn';
 // style layout
 import { theme } from 'Layout/theme';
 import GlobalStyle from '../styles/globals.css';
-import axios from 'axios';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
@@ -56,13 +56,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       }
     });
+  }, []);
 
+  useEffect(() => {
     axios
       .get('/api/serviceworker/')
       .catch((error) =>
         console.error('service worker get notice error', error),
       );
-  }, []);
+  });
 
   return loading ? (
     <></>
