@@ -1,5 +1,4 @@
 self.addEventListener('push', (event) => {
-  console.log(event)
   let { title, body, icon, tag } = event.data && event.data.text();
 
   event.waitUntil(
