@@ -15,6 +15,7 @@ export default function register(req: NextApiRequest, res: NextApiResponse) {
     const token = JSON.parse(
       req.query['tokenList[]'].toString() ?? 'null',
     ) as webPush.PushSubscription | null;
+
     const options = {
       TTL: 24 * 60 * 60,
       vapidDetails: {
@@ -25,13 +26,15 @@ export default function register(req: NextApiRequest, res: NextApiResponse) {
       },
     };
 
-    const payload = JSON.stringify({
-      title: '찌모가 왔어요',
-      body: `찌모는 휴식중`,
-      icon: `${process.env.NEXT_PUBLIC_SERVER_URL}/og/OG.png`,
-      tag: 'default tag',
-      ...req.query,
-    });
+    // const payload = JSON.stringify({
+    //   title: '찌모가 왔어요',
+    //   body: `찌모는 방송중`,
+    //   icon: `${process.env.NEXT_PUBLIC_SERVER_URL}/og/OG.png`,
+    //   tag: 'default tag',
+    //   ...req.query,
+    // });
+
+    const payload = '찌모가 왔어요';
 
     try {
       if (token !== null)
