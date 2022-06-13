@@ -12,6 +12,8 @@ export default function register(req: NextApiRequest, res: NextApiResponse) {
   };
 
   const handleNoticeSerivceWorker = async () => {
+    if (!req.query['tokenList[]']) return '';
+
     const token = JSON.parse(
       req.query['tokenList[]'].toString() ?? 'null',
     ) as webPush.PushSubscription | null;
