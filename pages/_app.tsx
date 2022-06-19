@@ -56,6 +56,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                 .catch((error) => {
                   console.error('service worker reigster error', error);
                 });
+            })
+            .catch((err) => {
+              console.error('error', err);
             });
         }
       }
