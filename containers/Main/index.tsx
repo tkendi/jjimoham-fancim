@@ -32,6 +32,8 @@ const MainContainer = () => {
 
       // 브라우저에서 실제로 사용할 수 있는 전체 높이
       console.log(window.innerHeight);
+
+      // TODO: 스크롤 위치 확인 후 해당 section으로 넘겨줌
     });
   }, []);
 
