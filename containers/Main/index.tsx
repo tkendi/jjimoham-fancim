@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 //components
@@ -25,9 +25,20 @@ const MainContainer = () => {
     imageWrap?.appendChild(image);
   };
 
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      // 스크롤 현재 값 확인
+      console.log(document.documentElement.scrollTop);
+
+      // 브라우저에서 실제로 사용할 수 있는 전체 높이
+      console.log(window.innerHeight);
+    });
+  }, []);
+
   return (
     <Container>
       <Page
+        id="section1"
         background="https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg"
         onClick={onClickFirstStep}
       >
@@ -36,12 +47,12 @@ const MainContainer = () => {
         </Wrap>
       </Page>
 
-      <Page background="/images/Main/MainTop.png">
+      <Page id="section2" background="/images/Main/MainTop.png">
         <Wrap>
           <SecondStep />
         </Wrap>
       </Page>
-      <Page background="">
+      <Page id="section3" background="">
         <Wrap>
           <ThirdStep />
         </Wrap>
