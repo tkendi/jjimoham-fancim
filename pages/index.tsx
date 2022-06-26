@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { gql } from 'apollo-boost';
+// import { gql } from 'apollo-boost';
 
 //api
-import client from 'api/GRAPHQL';
+// import client from 'api/GRAPHQL';
 
 //container
 import MainContainer from 'containers/Main';
@@ -10,9 +10,7 @@ import MainContainer from 'containers/Main';
 //components
 import Layout from 'components/Layout';
 
-const Home: NextPage = (data) => {
-  console.log('testing', data ? true : false);
-
+const Home: NextPage = () => {
   return (
     <Layout noHeader>
       <MainContainer />
@@ -22,27 +20,27 @@ const Home: NextPage = (data) => {
 
 export default Home;
 
-export const getStaticProps = async () => {
-  // apollo connection graphql query, and get data
+// export const getStaticProps = async () => {
+//   // apollo connection graphql query, and get data
 
-  const { data } = await client.query({
-    query: gql`
-      query {
-        getAllNotification {
-          id
-          name
-          email
-          number
-        }
-      }
-    `,
-  });
+//   const { data } = await client.query({
+//     query: gql`
+//       query {
+//         getAllNotification {
+//           id
+//           name
+//           email
+//           number
+//         }
+//       }
+//     `,
+//   });
 
-  // return data props: {data}
+//   // return data props: {data}
 
-  return {
-    props: {
-      data,
-    },
-  };
-};
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
