@@ -1,4 +1,8 @@
 import type { NextPage } from 'next';
+// import { gql } from 'apollo-boost';
+
+//api
+// import client from 'api/GRAPHQL';
 
 //container
 import MainContainer from 'containers/Main';
@@ -15,3 +19,28 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+// export const getStaticProps = async () => {
+//   // apollo connection graphql query, and get data
+
+//   const { data } = await client.query({
+//     query: gql`
+//       query {
+//         getAllNotification {
+//           id
+//           name
+//           email
+//           number
+//         }
+//       }
+//     `,
+//   });
+
+//   // return data props: {data}
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
