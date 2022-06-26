@@ -10,6 +10,7 @@
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout master && git branch -D temp-for-deploy-gh-pages"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@types/js-cookie": "^3.0.2",
     "@types/styled-components": "^5.1.15",
     "@types/web-push": "^3.3.2",
