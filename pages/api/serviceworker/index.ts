@@ -1,14 +1,43 @@
 import { NextApiResponse, NextApiRequest } from 'next';
+
 import * as webPush from 'web-push';
+
+//api
+// import client from 'api/GRAPHQL';
 
 //server
 
 export default function register(req: NextApiRequest, res: NextApiResponse) {
-  const tokenList: webPush.PushSubscription[] = [];
+  // const tokenList: webPush.PushSubscription[] = [];
 
-  const handleRegisterServicewoker = () => {
-    tokenList.push(req.body);
-    res.send(tokenList);
+  const handleRegisterServicewoker = async () => {
+    // const notificationData = req.body as {
+    //   endpoint: string;
+    //   expirationTime: string;
+    //   keys: { auth: string; p256dh: string };
+    // };
+
+    // await client.query({
+    //   query: gql`
+    //     mutation {
+    //       registerNotification(notification: {
+    //         endpoint: ${notificationData.endpoint},
+    //         expirationTime: ${notificationData.expirationTime},
+    //         p256dh: ${notificationData.keys.p256dh},
+    //         auth: ${notificationData.keys.auth}
+    //       }) {
+    //         id
+    //         endpoint
+    //         expirationTime
+    //         p256dh
+    //         auth
+    //       }
+    //     }
+    //   `,
+    // });
+
+    // tokenList.push(req.body);
+    // res.send(tokenList);
   };
 
   const handleNoticeSerivceWorker = async () => {
