@@ -54,21 +54,24 @@ function MyApp({ Component, pageProps }: AppProps) {
               return registration.pushManager?.subscribe(subscribeOptions);
             })
             .then(async (pushSubscription) => {
-              await client.query({
-                query: gql`
-                  mutation {
-                    registerNotification(notification: {
-                      ${pushSubscription}
-                    }) {
-                      id
-                      endpoint
-                      expirationTime
-                      p256dh
-                      auth
-                    }
-                  }
-                `,
-              });
+              console.log(pushSubscription.toJSON())    
+
+
+              // await client.query({
+              //   query: gql`
+              //     mutation {
+              //       registerNotification(notification: {
+              //         ${pushSubscription}
+              //       }) {
+              //         id
+              //         endpoint
+              //         expirationTime
+              //         p256dh
+              //         auth
+              //       }
+              //     }
+              //   `,
+              // });
               // await axios
               //   .post('/api/serviceworker/', pushSubscription)
               //   .then((res) => {
