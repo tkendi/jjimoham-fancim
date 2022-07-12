@@ -4,13 +4,13 @@ import Head from 'next/head';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
 // import axios from 'axios';
-import { gql } from 'apollo-boost';
+// import { gql } from 'apollo-boost';
 
 // api
 import { postToken } from 'api/POST';
 
 //graphql
-import client from 'api/GRAPHQL';
+// import client from 'api/GRAPHQL';
 
 // components
 import { FadeInCompo } from 'components/Fade/FadeIn';
