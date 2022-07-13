@@ -20,4 +20,4 @@ jobs:
             - ./node_modules
       - run:
           name: Run Build Test
-          command: yarn build
+          command: npm run test
