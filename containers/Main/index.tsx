@@ -79,6 +79,7 @@ const MainContainer = () => {
           </Wrap>
         </Page>
       </div>
+
       <Page id="section3" background="">
         <Wrap>
           <ThirdStep />

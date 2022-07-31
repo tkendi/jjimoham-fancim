@@ -29,7 +29,6 @@ const SecondStep = ({ progress }: Props) => {
   ] as const;
 
   const indexNumber = Math.floor(parseFloat(progress) / 25);
-  console.log(indexNumber);
 
   return (
     <>

@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { encodedImageToBlurhash } from 'utils/BlurImage';
 
 interface Props {
   id?: string;
@@ -45,6 +46,12 @@ const Page = ({ id, background, children, onClick }: Props) => {
     return () => document.removeEventListener('scroll', handleScroll);
     // Clean up scroll listener on unmount
   });
+
+  useLayoutEffect(() => {
+    (async function () {
+      console.log(background, await encodedImageToBlurhash(background));
+    })();
+  }, [background]);
 
   return (
     <PageWrap id={id} ref={pageRef} style={style} onClick={onClick && onClick}>
