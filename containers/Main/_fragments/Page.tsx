@@ -31,6 +31,12 @@ const Page = ({ id, background, children, onClick }: Props) => {
     style.bottom = `${offsetTop + offsetHeight - pageHeight}px`;
   });
 
+  useLayoutEffect(() => {
+    (async function () {
+      console.log(background, await encodedImageToBlurhash(background));
+    })();
+  }, [background]);
+
   // useEffect for subscriptions
   useEffect(() => {
     const handleScroll = () => {
@@ -46,12 +52,6 @@ const Page = ({ id, background, children, onClick }: Props) => {
     return () => document.removeEventListener('scroll', handleScroll);
     // Clean up scroll listener on unmount
   });
-
-  useLayoutEffect(() => {
-    (async function () {
-      console.log(background, await encodedImageToBlurhash(background));
-    })();
-  }, [background]);
 
   return (
     <PageWrap id={id} ref={pageRef} style={style} onClick={onClick && onClick}>

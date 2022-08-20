@@ -34,11 +34,17 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/plugin-proposal-decorators": "^7.17.9",
+    "@graphql-codegen/cli": "^2.11.6",
+    "@graphql-codegen/plugin-helpers": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.3",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
+    "graphql-let": "^0.18.6",
     "typescript": "4.4.4"
   },
   "resolutions": {
