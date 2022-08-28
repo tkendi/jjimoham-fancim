@@ -14,14 +14,7 @@ interface Props {
 const SecondStep = ({ progress }: Props) => {
   const [isClick, setIsClick] = useState(false);
 
-  // randomize create
-  // const getRandomIntInclusive = () => {
-  //   const min = 0;
-  //   const max = 15;
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // };
-
-  const HOVER_BACKGROUND_IMG = [
+  const BACKGROUND_IMG_LIST = [
     '/images/Main/mainHoverBackground.png',
     '/images/Main/mainHoverBackground2.png',
     '/images/Main/mainHoverBackground3.png',
@@ -38,7 +31,9 @@ const SecondStep = ({ progress }: Props) => {
       <ImageContainer
         style={{
           backgroundImage: `url(${
-            HOVER_BACKGROUND_IMG[indexNumber === 4 ? 3 : indexNumber]
+            BACKGROUND_IMG_LIST[
+              indexNumber === 4 ? 3 : isNaN(indexNumber) ? 0 : indexNumber
+            ]
           })`,
         }}
       />
@@ -81,6 +76,9 @@ const ImageContainer = styled.div`
   justify-content: space-between;
 
   background-color: #1a1a1a;
+  background-clip: border-box;
+  background-position: center center;
+
   z-index: 9;
   animation: ${FadeIn} 580ms linear 0s forwards;
   animation: ${sizeUp} 480ms linear 0s forwards;

@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout master && git branch -D temp-for-deploy-gh-pages"
+    "graphql": "DOTENV_CONFIG_PATH=.env && yarn graphql-let -r dotenv/config",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout master && git branch -D temp-for-deploy-gh-pages",
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -17,6 +18,7 @@
     "apollo-boost": "^0.4.9",
     "axios": "^0.27.2",
     "blurhash": "^1.1.5",
+    "deepmerge": "^4.2.2",
     "gh-pages": "^3.2.3",
     "graphql": "^16.5.0",
     "gsap": "^3.10.4",
@@ -34,11 +36,17 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/plugin-proposal-decorators": "^7.17.9",
+    "@graphql-codegen/cli": "^2.11.6",
+    "@graphql-codegen/plugin-helpers": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.3",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
+    "graphql-let": "^0.18.6",
     "typescript": "4.4.4"
   },
   "resolutions": {

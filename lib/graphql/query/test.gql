@@ -1,0 +1,9 @@
+query ExampleQuery {
+  getAllNotification {
+    id
+    expirationTime
+    auth
+    p256dh
+    endpoint
+  }
+}

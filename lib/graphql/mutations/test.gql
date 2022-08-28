@@ -1,0 +1,9 @@
+mutation RegisterNotification($notification: CreateNotificationInput) {
+  registerNotification(notification: $notification) {
+    id
+    endpoint
+    expirationTime
+    auth
+    p256dh
+  }
+}

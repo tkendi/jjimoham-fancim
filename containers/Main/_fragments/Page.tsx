@@ -29,7 +29,13 @@ const Page = ({ id, background, children, onClick }: Props) => {
     style.right = 0;
     style.top = `-${offsetTop}px`;
     style.bottom = `${offsetTop + offsetHeight - pageHeight}px`;
-  });
+  }, [centerRef, pageRef, bgRef]);
+
+  useLayoutEffect(() => {
+    (async function () {
+      console.log(background, await encodedImageToBlurhash(background));
+    })();
+  }, [background]);
 
   // useEffect for subscriptions
   useEffect(() => {
@@ -40,18 +46,11 @@ const Page = ({ id, background, children, onClick }: Props) => {
       },
       { scrollingElement } = document;
 
-    handleScroll();
     document.addEventListener('scroll', handleScroll);
 
-    return () => document.removeEventListener('scroll', handleScroll);
     // Clean up scroll listener on unmount
+    return () => document.removeEventListener('scroll', handleScroll);
   });
-
-  useLayoutEffect(() => {
-    (async function () {
-      console.log(background, await encodedImageToBlurhash(background));
-    })();
-  }, [background]);
 
   return (
     <PageWrap id={id} ref={pageRef} style={style} onClick={onClick && onClick}>
