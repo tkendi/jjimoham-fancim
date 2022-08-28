@@ -73,7 +73,7 @@ const MainContainer = () => {
       </Page>
 
       <div ref={ref}>
-        <Page id="section2" background="/images/Main/MainTop.png">
+        <Page id="section2" background="">
           <Wrap>
             <SecondStep progress={progress} />
           </Wrap>

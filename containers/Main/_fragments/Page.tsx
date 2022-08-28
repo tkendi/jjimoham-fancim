@@ -29,7 +29,7 @@ const Page = ({ id, background, children, onClick }: Props) => {
     style.right = 0;
     style.top = `-${offsetTop}px`;
     style.bottom = `${offsetTop + offsetHeight - pageHeight}px`;
-  });
+  }, [centerRef, pageRef, bgRef]);
 
   useLayoutEffect(() => {
     (async function () {
@@ -46,11 +46,10 @@ const Page = ({ id, background, children, onClick }: Props) => {
       },
       { scrollingElement } = document;
 
-    handleScroll();
     document.addEventListener('scroll', handleScroll);
 
-    return () => document.removeEventListener('scroll', handleScroll);
     // Clean up scroll listener on unmount
+    return () => document.removeEventListener('scroll', handleScroll);
   });
 
   return (

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
-import {  ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import axios from 'axios';
 
 // api
@@ -49,8 +49,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               };
 
               // await navigator.serviceWorker.ready;
-
-              console.log('test');
 
               return registration.pushManager?.subscribe(subscribeOptions);
             })
