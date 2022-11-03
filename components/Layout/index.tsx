@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
 //components
 import Header from 'components/Header';
+import { LoadingSuspence } from './suspense';
 
 interface Props {
   noHeader?: boolean;
@@ -20,7 +21,11 @@ const Layout = ({ children, noHeader, title = '찌모햄' }: Props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {!noHeader && <Header />}
-      <Body>{children}</Body>
+      <Body>
+        <Suspense fallback={<LoadingSuspence />}>
+          {children}
+        </Suspense>
+      </Body>
     </div>
   );
 };
