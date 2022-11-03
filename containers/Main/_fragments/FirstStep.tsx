@@ -29,7 +29,7 @@ const FirstStep = () => {
             transform: 'translate(-50%, -50%)',
           }}
         >
-          <Image src="/images/Main/JJIMO.png" width={50} height={50} />
+          <Image src="/images/Main/JJIMO.png" width={50} height={50} alt={''} />
         </div>
       </FollowCurosrWrap>
     </>
